@@ -248,17 +248,21 @@ int main(void)
 		//			LL_GPIO_SetOutputPin(led_GPIO_Port, led_Pin);
 		//		}
 		if(C){//calibration of laser
-			LL_GPIO_SetOutputPin(LO_GPIO_Port, LO_Pin);
+			if(Wcnt%3==0)
+				LL_GPIO_SetOutputPin(LO_GPIO_Port, LO_Pin);
+			else
+				LL_GPIO_ResetOutputPin(LO_GPIO_Port, LO_Pin);
 		}else{
 			LL_GPIO_ResetOutputPin(LO_GPIO_Port, LO_Pin);
 		}
 
 
-		if(G||S){//calibration of laser
+		if(G||S){
 			LL_GPIO_ResetOutputPin(led_GPIO_Port, led_Pin);
 		}else{
 			LL_GPIO_SetOutputPin(led_GPIO_Port, led_Pin);
 		}
+		Wcnt++;
 		//		if(shot){
 		//			LL_GPIO_TogglePin(LO_GPIO_Port, LO_Pin);
 		//			HAL_Delay(500);
