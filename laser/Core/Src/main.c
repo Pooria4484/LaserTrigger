@@ -135,7 +135,7 @@ int main(void)
 		show_n(nn, 0);
 		i=0;
 		//				LL_GPIO_SetOutputPin(LO_GPIO_Port, LO_Pin);
-		while(i<570)
+		while(i<200)
 		{
 			delay_us10;
 			i++;
@@ -150,7 +150,7 @@ int main(void)
 		show_n(nn, 1);
 		i=0;
 		//				LL_GPIO_SetOutputPin(LO_GPIO_Port, LO_Pin);
-		while(i<570)
+		while(i<200)
 		{
 			delay_us10;
 			i++;
